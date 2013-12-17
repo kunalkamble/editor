@@ -20,7 +20,7 @@ JCSDL.Loader.addComponent(function($, undefined) {
 
 	/**
 	 * Single filter editor.
-	 * 
+	 *
 	 * @param {JCSDL.GUI} gui GUI instance to which this filter editor belongs.
 	 * @param {jQuery} $appendTo Element to which the filter editor view should be appended and shown (required in order to properly set dimensions of various plugins).
 	 * @param {Object} filter[optional] Optional filter object to be loaded.
@@ -87,7 +87,7 @@ JCSDL.Loader.addComponent(function($, undefined) {
 		 */
 		/**
 		 * Saves the filter that is currently being edited when clicked its save button.
-		 * 
+		 *
 		 * @param  {Event} ev Click Event.
 		 */
 		this.$view.find('.jcsdl-filter-save').bind('click touchstart', function(ev) {
@@ -99,7 +99,7 @@ JCSDL.Loader.addComponent(function($, undefined) {
 
 		/**
 		 * Hides the single filter editor and doesn't save the filter when the cancel button is clicked.
-		 * 
+		 *
 		 * @param  {Event} ev Click Event.
 		 */
 		this.$view.find('.jcsdl-filter-cancel').bind('click touchstart', function(ev) {
@@ -187,7 +187,7 @@ JCSDL.Loader.addComponent(function($, undefined) {
             var $current = self.$searchResults.find('li.jcsdl-selected').removeClass('jcsdl-selected'),
                 $next = ($current.length && $current.nextAll('li:visible:first').length) ? $current.nextAll('li:visible:first') : self.$searchResults.find('li:visible:first'),
                 $prev = ($current.length && $current.prevAll('li:visible:first').length) ? $current.prevAll('li:visible:first') : self.$searchResults.find('li:visible:last');
-            
+
             if (ev.which === KEYS.UP) {
                 $current = $prev.addClass('jcsdl-selected');
             } else if (ev.which === KEYS.DOWN) {
@@ -220,7 +220,7 @@ JCSDL.Loader.addComponent(function($, undefined) {
                 if ($('input:focus, textarea:focus').length) {
                     return;
                 }
-            
+
                 self.$searchInput.focus();
             });
         }
@@ -255,7 +255,7 @@ JCSDL.Loader.addComponent(function($, undefined) {
 
 		/**
 		 * Load a filter into the editor.
-		 * 
+		 *
 		 * @param  {Object} filter Filter to be loaded.
 		 */
 		loadFilter : function(filter) {
@@ -281,7 +281,7 @@ JCSDL.Loader.addComponent(function($, undefined) {
 			} else {
 				this.$view.find('.jcsdl-filter-value-input-operators .operator-' + filter.operator).click();
 			}
-			
+
 			// fill in the value (using the proper delegate)
 			var $valueInputView = this.$view.find('.jcsdl-filter-value-input-field');
 			this.setValueForField($valueInputView, fieldInfo, filter.value, filter.operator);
@@ -294,7 +294,7 @@ JCSDL.Loader.addComponent(function($, undefined) {
 
         /**
          * Select the given target in the target selector carousel.
-         * 
+         *
          * @param  {String} target Target name.
          */
         selectTarget : function(target) {
@@ -316,7 +316,7 @@ JCSDL.Loader.addComponent(function($, undefined) {
 		 * ########################## */
 		/**
 		 * Adds a filter step with proper numbering/position.
-		 * 
+		 *
 		 * @param {String} stepName Name of the step.
 		 * @param {jQuery} $view    View of the step.
 		 * @param {Boolean} slide[optional] Should the displaying of the step be a slide down animate (true) or a fade in (false). Default: true.
@@ -428,7 +428,7 @@ JCSDL.Loader.addComponent(function($, undefined) {
 		/**
 		 * Removes all filter steps after the given position.
 		 * Also clears the resulting CSDL if there was any before.
-		 * 
+		 *
 		 * @param  {Number} position
 		 * @return {String}  Name of the first step that was removed.
 		 */
@@ -458,7 +458,7 @@ JCSDL.Loader.addComponent(function($, undefined) {
 
 		/**
 		 * When a target is selected, the user needs to select a field.
-		 * 
+		 *
 		 * @param  {String} targetName Name of the selected target.
 		 */
 		didSelectTarget : function(targetName) {
@@ -481,7 +481,7 @@ JCSDL.Loader.addComponent(function($, undefined) {
 
 		/**
 		 * When a field is selected then the user either needs to input a value or select a subfield if such exists.
-		 * 
+		 *
 		 * @param  {String} fieldName  Name of the selected field.
 		 * @param  {jQuery} $fieldView The field selection view that was used.
 		 * @param  {jQuery} $stepView Step view at which the field was selected.
@@ -536,7 +536,7 @@ JCSDL.Loader.addComponent(function($, undefined) {
 
 		/**
 		 * When an input is selected then the user needs to input a value.
-		 * 
+		 *
 		 * @param  {String} inputName  Name of the selected input type.
 		 * @param  {jQuery} $inputView The input selection view that was used.
 		 * @param  {jQuery} $stepView Step view at which the field was selected.
@@ -558,7 +558,7 @@ JCSDL.Loader.addComponent(function($, undefined) {
 
 		/**
 		 * Adds a target help trigger to the given step. It should be final step of the carousel.
-		 * 
+		 *
 		 * @param {jQuery} $stepView
 		 */
 		addTargetHelpToStep : function($stepView) {
@@ -646,7 +646,7 @@ JCSDL.Loader.addComponent(function($, undefined) {
 		 * ########################## */
 		/**
 		 * Shows an error.
-		 * 
+		 *
 		 * @param  {String} message Error message to be displayed.
 		 * @param  {String} code    Code that caused the error.
 		 */
@@ -667,7 +667,7 @@ JCSDL.Loader.addComponent(function($, undefined) {
 
 		/**
 		 * Trigger an event handler defined in the config.
-		 * 
+		 *
 		 * @param  {String} name Name of the event handler.
 		 * @param  {Array} data[optional] Arguments to pass to the handler.
 		 * @return {mixed} Whatever the handler returns.
@@ -678,7 +678,7 @@ JCSDL.Loader.addComponent(function($, undefined) {
 
 		/**
 		 * Creates the target select view.
-		 * 
+		 *
 		 * @return {jQuery}
 		 */
 		createTargetSelectView : function() {
@@ -700,7 +700,7 @@ JCSDL.Loader.addComponent(function($, undefined) {
 
 		/**
 		 * Creates a select option for the given target with the specified name.
-		 * 
+		 *
 		 * @param  {String} name   Unique name of the target, matching one from the JCSDL definition.
 		 * @param  {Object} target Definition of the target from JCSDL definition.
 		 * @return {jQuery}
@@ -727,7 +727,7 @@ JCSDL.Loader.addComponent(function($, undefined) {
 
 		/**
 		 * Creates a field selection view for the given collection of possible fields.
-		 * 
+		 *
 		 * @param  {Object} fields Collection of possible fields.
 		 * @return {jQuery}
 		 */
@@ -765,7 +765,7 @@ JCSDL.Loader.addComponent(function($, undefined) {
 
 		/**
 		 * Creates a select option for the given field with the specified name.
-		 * 
+		 *
 		 * @param  {String} name  Unique name of the field in the current target, matching one from JCSDL definition.
 		 * @param  {Object} fieldInfo Definition of the field from JCSDL definition.
 		 * @param  {Array} parentPath Path to the parent target.
@@ -825,7 +825,7 @@ JCSDL.Loader.addComponent(function($, undefined) {
 
 		/**
 		 * Creates an value input fields selection view for the given collection of possible inputs.
-		 * 
+		 *
 		 * @param  {Object} inputs Collection of possible inputs.
 		 * @return {jQuery}
 		 */
@@ -845,7 +845,7 @@ JCSDL.Loader.addComponent(function($, undefined) {
 
 		/**
 		 * Creates a select option for the given value input type.
-		 * 
+		 *
 		 * @param  {String} name  Unique name of the value input type.
 		 * @return {jQuery}
 		 */
@@ -862,7 +862,7 @@ JCSDL.Loader.addComponent(function($, undefined) {
 		 * ########################## */
 		/**
 		 * Creates a DOM element for inputting the value for the given field.
-		 * 
+		 *
 		 * @param  {Object} field Definition of the field from JCSDL definition.
 		 * @param  {String} inputType Which input type to use (if many).
 		 * @return {jQuery}
@@ -894,7 +894,7 @@ JCSDL.Loader.addComponent(function($, undefined) {
 
 		/**
 		 * Create operators selection for most input fields.
-		 * 
+		 *
 		 * @param  {jQuery} $view      Operators list view.
 		 * @param  {Object} field      Field definition from JCSDL Definition.
 		 * @param  {String} inputType  Name of the input type.
@@ -925,7 +925,7 @@ JCSDL.Loader.addComponent(function($, undefined) {
 			/**
 			 * Listen for clicks on the operators and select the clicked one.
 			 * If 'exists' operator selected then hide the value input.
-			 * 
+			 *
 			 * @param  {Event} ev
 			 * @listener
 			 */
@@ -976,7 +976,7 @@ JCSDL.Loader.addComponent(function($, undefined) {
 
 		/**
 		 * Create operators selection for text input fields.
-		 * 
+		 *
 		 * @param  {jQuery} $view      Operators list view.
 		 * @param  {Object} field      Field definition from JCSDL Definition.
 		 * @param  {String} inputType  Name of the input type.
@@ -1009,7 +1009,8 @@ JCSDL.Loader.addComponent(function($, undefined) {
 			});
 
 			$view.html($select).insertAfter($inputView);
-			$dropdown.hide().appendTo('body');
+			debugger
+			$dropdown.hide().appendTo('.jcsdl-filter-value-input-operators');
 
 			// add case sensitivity toggle
 			if (field.cs) {
@@ -1030,7 +1031,7 @@ JCSDL.Loader.addComponent(function($, undefined) {
 			 */
 			/**
 			 * Shows the operators dropdown when clicked on the select box.
-			 * 
+			 *
 			 * @param  {Event} ev Click event.
 			 * @listener
 			 */
@@ -1067,7 +1068,7 @@ JCSDL.Loader.addComponent(function($, undefined) {
 
 			/**
 			 * Shows details of the operator.
-			 * 
+			 *
 			 * @param  {Event} ev Click event.
 			 * @listener
 			 */
@@ -1096,7 +1097,7 @@ JCSDL.Loader.addComponent(function($, undefined) {
 								popup.reposition();
 								return;
 							}
-							
+
 							popup.setContent(data.html);
 							popup.reposition();
 
@@ -1111,7 +1112,7 @@ JCSDL.Loader.addComponent(function($, undefined) {
 
 			/**
 			 * Select the operator when it was clicked in the dropdown.
-			 * 
+			 *
 			 * @param  {Event} ev Click event.
 			 * @listener
 			 */
@@ -1156,7 +1157,7 @@ JCSDL.Loader.addComponent(function($, undefined) {
 
 				} else {
 					$inputView.find('.jcsdl-containsnear-distance').hide();
-					
+
 					// allow space again
 					$inputView.find('.jcsdl-list-add-input').unbind('keydown.nospace');
 					if ($input.data('split')) {
@@ -1184,7 +1185,7 @@ JCSDL.Loader.addComponent(function($, undefined) {
 
 			/**
 			 * Resize the dropdown to match the original input when the window resizes.
-			 * 
+			 *
 			 * @param  {Event} ev Window resize event.
 			 * @listener
 			 */
@@ -1195,8 +1196,8 @@ JCSDL.Loader.addComponent(function($, undefined) {
                 }
 
 				$dropdown.css({
-					top : $select.offset().top + $select.outerHeight() - 1,
-					left : $select.offset().left,
+					top : - 1,
+					left : "20px",
 					width : $select.outerWidth() - 2
 				});
 			});
@@ -1222,7 +1223,7 @@ JCSDL.Loader.addComponent(function($, undefined) {
 
 		/**
 		 * Creates a single operator select view for the specified operator.
-		 * 
+		 *
 		 * @param  {String} name Name of the operator.
 		 * @return {jQuery}
 		 */
@@ -1243,7 +1244,7 @@ JCSDL.Loader.addComponent(function($, undefined) {
 
 		/**
 		 * Creates a single operator view for operators selection for text inputs.
-		 * 
+		 *
 		 * @param  {String} name Name of the operator.
 		 * @return {jQuery} View of the operator.
 		 */
@@ -1274,7 +1275,7 @@ JCSDL.Loader.addComponent(function($, undefined) {
 
 		/**
 		 * Sets the value for the given vale view (delegates it to proper function that will handle the specific view).
-		 * 
+		 *
 		 * @param {jQuery} $view Value input view.
 		 * @param {String} value String representation of the value to be set.
 		 * @return {Boolean}
@@ -1315,7 +1316,7 @@ JCSDL.Loader.addComponent(function($, undefined) {
 
 		/**
 		 * Reads the value from the given value view (delegates it to proper function that will handle the specific view).
-		 * 
+		 *
 		 * @param  {jQuery} $view Value input view.
 		 * @return {String}
 		 */
@@ -1376,7 +1377,7 @@ JCSDL.Loader.addComponent(function($, undefined) {
 		 * ########################## */
 		/**
 		 * Returns the current editor view.
-		 * 
+		 *
 		 * @return {jQuery}
 		 */
 		getView : function() {
@@ -1385,7 +1386,7 @@ JCSDL.Loader.addComponent(function($, undefined) {
 
 		/**
 		 * Returns the filter info that's being edited based on the current selections.
-		 * 
+		 *
 		 * @return {Object} Filter object.
 		 */
 		getFilterInfo : function() {
@@ -1427,7 +1428,7 @@ JCSDL.Loader.addComponent(function($, undefined) {
 
 		/**
 		 * Returns definition of the field found under the current root path and specified field name.
-		 * 
+		 *
 		 * @param  {String} newFieldName
 		 * @return mixed Either Object or bool false if no such field was found.
 		 */
@@ -1445,7 +1446,7 @@ JCSDL.Loader.addComponent(function($, undefined) {
 
 		/**
 		 * Returns the current selected path in the filter editor.
-		 * 
+		 *
 		 * @return {String}
 		 */
 		getCurrentPath : function() {
@@ -1458,7 +1459,7 @@ JCSDL.Loader.addComponent(function($, undefined) {
          * If there are any entries in 'showTargets' then a target to be visible needs to be in there.
          * Otherwise if the target is in 'hideTargets' then it will be hidden.
          * Otherwise it will be displayed.
-         * 
+         *
          * @param  {String}  name Target name (can be a part of the name).
          * @return {Boolean}
          */

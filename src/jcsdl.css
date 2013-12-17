@@ -3539,6 +3539,7 @@ a.jcsdl-filters-logic-option {
     display: block;
     overflow: hidden;
     border-top: 1px solid gainsboro;
+    position: relative;
     cursor: pointer; }
     .jcsdl-dropdown .jcsdl-dropdown-option .jcsdl-icon {
       border: 0;
@@ -3566,6 +3567,8 @@ a.jcsdl-filters-logic-option {
       .jcsdl-dropdown .jcsdl-dropdown-option .jcsdl-dropdown-details-trigger:hover {
         background-position: -38px -393px; }
     .jcsdl-dropdown .jcsdl-dropdown-option .jcsdl-dropdown-option-desc {
+      position: absolute;
+      top: 0;
       margin-left: 56px;
       margin-right: 38px;
       padding: 5px 0; }
